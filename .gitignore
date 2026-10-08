@@ -1,0 +1,24 @@
+node_modules
+.next
+out
+build
+*.log
+npm-debug.log*
+
+# env
+.env
+.env.local
+.env*.local
+
+# local database
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+.DS_Store
+
+# derived / local
+assets/import/
+tsconfig.tsbuildinfo
+next-env.d.ts

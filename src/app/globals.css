@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+/* チャットの吹き出し内の改行を保持 */
+.chat-bubble {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* バーチャルオフィスの動き */
+@keyframes mb-walk { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-5px) rotate(4deg); } }
+@keyframes mb-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes mb-type { 0%,100% { transform: translateY(0) scale(1); } 25% { transform: translateY(1px) scale(1.03); } 75% { transform: translateY(-1px) scale(0.98); } }
+@keyframes mb-dots { 0% { opacity: .2; } 50% { opacity: 1; } 100% { opacity: .2; } }
+@keyframes mb-dash { to { stroke-dashoffset: -24; } }
+@keyframes mb-pop { 0% { transform: translateY(6px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-26px); opacity: 0; } }
+.mb-walk { animation: mb-walk .5s ease-in-out infinite; }
+.mb-bob { animation: mb-bob 3s ease-in-out infinite; }
+.mb-type { animation: mb-type .45s ease-in-out infinite; }
+.mb-dot1 { animation: mb-dots 1s infinite; } .mb-dot2 { animation: mb-dots 1s .2s infinite; } .mb-dot3 { animation: mb-dots 1s .4s infinite; }
+.mb-dash { animation: mb-dash .8s linear infinite; }
+.mb-pop { animation: mb-pop 2.4s ease-out forwards; }
